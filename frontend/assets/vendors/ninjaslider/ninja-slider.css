@@ -1,0 +1,192 @@
+#ninja-slider {
+	width: 100%;
+	/* background: #FFF; */
+	/* padding: 0!important; */
+	/* margin: -30px auto; */
+	 overflow: hidden;
+	 box-sizing: border-box;
+	/* max-height: 50%; */
+	position: fixed;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(51,51,51,0.7);
+	z-index: -1;
+}
+
+#ninja-slider .slider-inner {
+    /*max-width:720px;*/
+    margin:0 auto;/*center-aligned */
+    font-size:0px;
+    position:relative;
+    box-sizing:border-box;
+}
+
+#ninja-slider ul {
+    position:relative;
+    list-style:none;
+    padding:0;
+    box-sizing:border-box;
+    background:black;
+}
+
+#ninja-slider li {    
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    position: absolute;
+    font-size:12px;
+    list-style:none;
+    margin:0;
+    padding:0;
+    opacity:0;
+    overflow:hidden;
+    box-sizing:border-box;
+}
+
+
+#ninja-slider li.ns-show {
+    opacity:1;
+}
+
+
+/* --------- slider image ------- */  
+#ninja-slider .ns-img {
+    background-color:rgba(0,0,0,0.8);
+    background-size:contain;/*Note: If transitionType is zoom, it will be overridden to cover.*/
+
+    /*box-shadow: 0 1px 5px rgba(0,0,0,.8),inset 0 0 2px rgba(255,255,255,.4);*/
+    border-radius:4px;
+
+    cursor:default;
+    display:block;
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    background-position:center center;
+}
+
+
+/*---------- Captions -------------------*/
+
+#ninja-slider .caption {
+	font-size: 4em;
+	/* font-family: 'Bree Serif', sans-serif; */
+/*	position: absolute;*/
+	position: relative;
+	right: 150px;
+	width: 100%;
+	text-align: right;
+	color: rgba(255,255,255,0.8);
+	bottom: 50%;
+	/* left: 30%; */
+	top: 60%;
+}
+#ninja-slider li.ns-show .caption {
+    /* 5s = (delay + transitionSpeed) set in the ninja-slider.js */
+    -webkit-animation: titleAnimation 5s linear both;
+    animation: titleAnimation 5s linear both;
+}
+
+#ninja-slider li.sl-0 .caption { 
+    /*delay caption animation for the initial slide*/
+    -webkit-animation: none;
+    animation: none;
+    display:none;
+}
+
+@keyframes titleAnimation { 
+	0% { opacity:0; }
+	10% { opacity:0;transform: translateY(-20%);}
+	20% { opacity:1;transform: translateY(0%);}
+	70% {opacity:1;transform: translateY(0%);}
+	80% {opacity:0;transform: translateY(100%);}
+	100% {opacity:0;transform: translateY(100%);}
+}
+
+@-webkit-keyframes titleAnimation { 
+	0% { opacity:0; }
+	10% { opacity:0; -webkit-transform:translateY(-20%);}
+	25% { opacity:1; -webkit-transform:translateY(0%);}
+	70% {opacity:1; -webkit-transform:translateY(0%);}
+	80% {opacity:0; -webkit-transform:translateY(100%);}
+	100% {opacity:0; -webkit-transform:translateY(100%);}
+}
+
+/* ---------Arrow buttons ------- */   
+/* The arrow button id should be: slider id + ("-prev", "-next", and "-pause-play") */ 
+/* Usually the ninja-slider.js will create the arrow buttons and pager(nav dots) automatically, unless you have added their markup manually to the HTML as this demo did.
+   This demo has put them inside a DIV.navWrapper. 
+*/  
+
+div.navsWrapper {
+    height: 32px;
+    margin-top: 0;
+    outline: 0 none;
+    position: absolute;
+    text-indent: -9999px;
+    top: 40%;
+    z-index: 9999;
+    width: 100%;
+}
+
+
+#ninja-slider-prev::before, #ninja-slider-next::before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-left: 5px solid white;
+    border-top: 5px solid white;
+    backface-visibility:hidden;
+    cursor: pointer;
+}
+
+#ninja-slider-prev::before {
+    -ms-transform:rotate(-45deg);/*IE 9*/
+    -webkit-transform:rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 50px;
+}
+
+#ninja-slider-next::before {
+    -ms-transform:rotate(135deg);/*IE 9*/
+    -webkit-transform:rotate(135deg);
+    transform: rotate(135deg);
+    right: 50px;
+}
+
+
+/*------ pager(nav bullets) ------*/      
+/* The pager id should be: slider id + "-pager" */
+#ninja-slider-pager, #ninja-slider-pause-play { display:none;} 
+
+
+/*Responsive settings*/
+@media only screen and (max-width:500px){
+
+    #ninja-slider-prev, #ninja-slider-next, #ninja-slider-pager {
+        display:none;
+    }
+}
+
+@media only screen and (max-width:1100px){    
+    #ninja-slider .caption {
+        font-size:7em;
+    }
+}
+
+.soustitre{
+	font-size:40px;
+}
+
+
+@media only screen and (max-width:700px){    
+    #ninja-slider .caption {
+        font-size:3em;
+    }
+}
+

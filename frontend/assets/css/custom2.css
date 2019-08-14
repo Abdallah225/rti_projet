@@ -1,0 +1,120 @@
+.float-left {
+	float: left;
+}
+
+.power-button{
+	width: 17px;
+	margin: 12px 10px;
+}
+.voirplus{
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	padding: 5px 20px;
+	background: linear-gradient(to right, #e21d71 56%,#70248b 100%);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	border:none;
+	cursor: pointer;
+}
+
+.bx-wrapper .bx-controls-direction a {
+	height: 32px;
+	margin-top: 0;
+	outline: 0 none;
+	position: absolute;
+	text-indent: -9999px;
+	top: 40%;
+	width: 32px;
+	z-index: 9999;
+}
+
+#ninja-slider-prev {
+	background: url("images/controls.png") no-repeat scroll 0 -32px rgba(0, 0, 0, 0);
+	left: -40px;
+}
+
+#ninja-slider-next {
+	background: url("images/controls.png") no-repeat scroll -43px -32px rgba(0, 0, 0, 0);
+	right: -40px;
+}
+
+.mosaic-bloc-padding{
+	padding-left: 300px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+
+.login-popup{
+	width: 500px;
+	height: 500px;
+	background-image: url("../img/bg-login.jpg");
+	background-repeat: no-repeat;
+}
+
+.float-right{
+	float: right;
+}
+
+.closebtn{
+	font-size: 1.2em;
+	margin: 5px;
+	background: black;
+	border-radius: 100px;
+}
+.closebtn:hover{
+	 background: black;
+ }
+
+.blue-bg{
+	background: #03063d
+}
+.blue-gradient{
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(3,6,61,1));
+}
+.card--content:hover{
+	border: 5px solid white;
+}
+
+
+.overlay {
+	position: absolute;
+	top: 70%;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.7); /* Black see-through */
+	color: #f1f1f1;
+	width: 100%;
+	height: 30%;
+	transition: .5s ease;
+	opacity:0;
+	color: white;
+	font-size: 10px;
+	padding: 10px 20px 10px 10px;
+}
+
+.card--content:hover .overlay {
+	opacity: 1;
+	overflow-y: hidden;
+}
+.card--content:hover  {
+	transform: scale(1.1);
+	transition: transform .2s;
+	z-index: 1;
+	cursor: pointer;
+}
+.playbtn{
+	color: white;
+	float: right;
+	font-size: large;
+	text-align: right;
+	position: absolute;
+	top: 10px;
+	right: 5px;
+}
+.h100{
+	height: 100%;
+}
+
